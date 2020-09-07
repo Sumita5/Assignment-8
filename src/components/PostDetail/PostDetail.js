@@ -17,13 +17,13 @@ const PostDetail = () => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
         .then(res => res.json())
         .then(data => setPost(data))
-    }, [])     
+    }, [postId])     
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postId}`)
         .then(res => res.json())
         .then(data => setComments(data))
-    }, [])  
+    }, [postId])  
     
     return (
     
